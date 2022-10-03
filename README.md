@@ -33,9 +33,28 @@
 - File -> Open Bot
 - Enter a Bot URL of `http://localhost:3978/api/messages`
 
-## Deploy the bot to Azure
+### Deploy the bot to Azure and microsoft teams
 
-### Publishing Changes to Azure Bot Service
+- Create and configure an azure resource.
+  1. Create a bot services resource
+     2.Global Location
+  2. Multi tenant type
+  3. Within the certificates and secrets screen create a new secret and copy the unique value
+  4. Within the configuration screen, put the end-point of our nodejs server <url>/api/messages in the connection point
+  5. On the channels screen add Microsoft teams.
+  6. Then click on get codes to insert bot and copy the bot id.
+- Inside our nodejs project write the values ​​inside .env. The values ​​we need are:
+  1. MicrosoftAppType=Microsoft.BotService/botServices
+  2. MicrosoftAppId= application id
+  3. MicrosoftAppPassword=secret value
+     4.MicrosoftAppTenantId=
+  4.
+- Create a developer account in Microsoft 365 and create a Microsoft Teams work environment.
+- Visit the Microsoft Teams developer portal and create a Microsoft Teams app. We can configure it to use it only in our company
+- Inside our newly created application, we visit basic info and enter our application client id and put our azure resource id.
+- We can modify our bot permissions as we wish
+- Post.
+- Within Microsoft teams we search the store for our newly created app.
 
 ## Further reading
 
