@@ -1,30 +1,25 @@
-# simon-blog-botv1
-
-Develop a Bot step by step, introducing more concepts as we go
-
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
-
 ## Prerequisites
 
 - [Node.js](https://nodejs.org) version 10.14.1 or higher
 
-    ```bash
-    # determine node version
-    node --version
-    ```
+  ```bash
+  # determine node version
+  node --version
+  ```
 
 ## To run the bot
 
 - Install modules
 
-    ```bash
-    npm install
-    ```
+  ```bash
+  npm install
+  ```
+
 - Start the bot
 
-    ```bash
-    npm start
-    ```
+  ```bash
+  npm start
+  ```
 
 ## Testing the bot using Bot Framework Emulator
 
@@ -41,13 +36,6 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 ## Deploy the bot to Azure
 
 ### Publishing Changes to Azure Bot Service
-
-    ```bash
-    # build the TypeScript bot before you publish
-    npm run build
-    ```
-
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
 
 ## Further reading
 
