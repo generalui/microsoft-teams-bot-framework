@@ -19,13 +19,13 @@ import { TurnContext } from "botbuilder";
 /////
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCsJ8oGBYOWbfXHKZLJ5OlTKykQUP10ziQ",
-  authDomain: "genuidemo.firebaseapp.com",
-  projectId: "genuidemo",
-  storageBucket: "genuidemo.appspot.com",
-  messagingSenderId: "815776003834",
-  appId: "1:815776003834:web:49e269fa2b71c27ba57b43",
-  databaseURL: "https://genuidemo-default-rtdb.firebaseio.com",
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  databaseURL: "",
 };
 const app = initializeApp(firebaseConfig);
 
