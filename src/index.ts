@@ -19,13 +19,13 @@ import { TurnContext } from "botbuilder";
 /////
 // TODO: Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: "",
-  databaseURL: "",
+  apiKey: "AIzaSyCsJ8oGBYOWbfXHKZLJ5OlTKykQUP10ziQ",
+  authDomain: "genuidemo.firebaseapp.com",
+  projectId: "genuidemo",
+  storageBucket: "genuidemo.appspot.com",
+  messagingSenderId: "815776003834",
+  appId: "1:815776003834:web:49e269fa2b71c27ba57b43",
+  databaseURL: "https://genuidemo-default-rtdb.firebaseio.com",
 };
 const app = initializeApp(firebaseConfig);
 
@@ -46,9 +46,11 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
+// console.log(`process.env.MicrosoftAppId: ${process.env.MicrosoftAppId} :: process.  env.MicrosoftAppPassword: ${process.env.MicrosoftAppPassword}`)
 const adapter = new botbuilder.BotFrameworkAdapter({
-  appId: process.env.MicrosoftAppId,
-  appPassword: process.env.MicrosoftAppPassword,
+  // TODO: ROB! Figure this out. =)
+  appId: process.env.MicrosoftAppId || `02b321c9-8fec-4f17-b085-9bab4e81bc67`,
+  appPassword: process.env.MicrosoftAppPassword || `hK78Q~6pasrkR6P6nXpr4NAMaH1pEA0tLE.bFaaP`,
 });
 
 // Catch-all for errors.
@@ -67,7 +69,7 @@ adapter.onTurnError = async (context, error) => {
   );
 
   // Send a message to the user
-  await context.sendActivity("The bot encounted an error or bug.");
+  await context.sendActivity("The bot encountered an error or bug.");
   await context.sendActivity(
     "To continue to run this bot, please fix the bot source code."
   );
@@ -85,7 +87,9 @@ let currentUser;
 
 // Listen for incoming requests.
 server.post("/api/messages", (req, res) => {
+  console.log(`POST /api/messages`)
   adapter.processActivity(req, res, async (context) => {
+    // console.log(`processActivity`)
     // Route to main dialog.
     await myBot.run(context);
     currentUser = context.activity.from.id;
@@ -94,6 +98,7 @@ server.post("/api/messages", (req, res) => {
     );
     adapterContext = context.adapter;
   });
+
 });
 
 // Attach an asynchronous callback to read the data at our posts reference
